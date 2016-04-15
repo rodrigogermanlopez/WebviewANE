@@ -55,7 +55,7 @@ public class WebViewANE extends EventDispatcher {
 		log( "callContext() functionName=" + functionName + " args=" + args );
 		args.unshift( functionName );
 		// inject the args Array as parameters of the call() function.
-		return _context.call.apply( null, args );
+		return _context.call.apply( this, args );
 //		_context.call( functionName, args[0], args[1], args[2] ) ; // instead of this
 	}
 
@@ -107,5 +107,8 @@ public class WebViewANE extends EventDispatcher {
 		trace( "[WebViewANE] " + args.join( " " ) );
 	}
 
+	public function get context():ExtensionContext {
+		return _context;
+	}
 }
 }
