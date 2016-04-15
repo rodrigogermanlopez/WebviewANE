@@ -18,7 +18,7 @@ public class Main extends Sprite {
 		var s:ScreenShooter = new ScreenShooter();
 		var ba:ByteArray = s.getScreenShot() ;
 		trace("output::", ba ) ;
-		
+
 
 		/*protected function takeScreenShot():void
 		{
