@@ -3,16 +3,14 @@
 #!/bin/bash
 
 SDK="/Users/rodrigo/developer/tools/air_sdk_21.0.0.176"
+NAME="WebViewANE"
+WIN_FILE="WebViewChromeANE.dll"
 
 ACOMPC="$SDK/bin/acompc"
 ADT="$SDK/bin/adt"
-
 SWFVERSION=14
 
 INCLUDE_SOURCES="../src/"
-NAME="WebViewANE"
-
-WIN_FILE="WebViewChromeANE.dll"
 #IOS_FILE="StudioNorth.WebView.a"
 
 echo "GENERATING SWC"
