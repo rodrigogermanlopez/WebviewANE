@@ -37,6 +37,7 @@ sleep 1
 
 echo "DONE!"
 
+cp ./$NAME.ane ../../../lib/$NAME.ane
 mv ./$NAME.ane ../$NAME.ane
 
 echo "WebView ANE Build Complete"

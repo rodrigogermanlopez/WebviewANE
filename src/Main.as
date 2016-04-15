@@ -12,10 +12,8 @@ public class Main extends Sprite {
 
 	private function init():void {
 		trace( "ANE isSupported:" +  WebViewANE.isSupported ) ;
-		if( WebViewANE.isSupported ){
-			trace("hello!") ;
-		}
-		WebViewANE.instance.callContext( "unafunction", [123]) ;
+		if( !WebViewANE.isSupported ) return ;
+		WebViewANE.instance.callContext( "as_passAString", ["A test string hello world"]) ;
 	}
 }
 }

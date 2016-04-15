@@ -23,7 +23,7 @@ public class WebViewANE extends EventDispatcher {
 	}
 
 	// trace messages for debug.
-	public var verbose:Boolean = false ;
+	public var verbose:Boolean = false;
 
 	/**
 	 * "private" Constructor
@@ -46,16 +46,16 @@ public class WebViewANE extends EventDispatcher {
 	 * @param functionName
 	 * @param args
 	 */
-	public function callContext( functionName:String, args:Array = null ):void {
-		if( !_context ) {
-			log("ERROR:: platform not supported.") ;
-			return ;
+	public function callContext( functionName:String, args:Array = null ):Object {
+		if ( !_context ) {
+			log( "ERROR:: platform not supported." );
+			return null ;
 		}
 		if ( !args ) args = [];
-		log("callContext() functionName=" + functionName + " args=" + args ) ;
+		log( "callContext() functionName=" + functionName + " args=" + args );
 		args.unshift( functionName );
 		// inject the args Array as parameters of the call() function.
-		_context.call.apply( null, args );
+		return _context.call.apply( null, args );
 //		_context.call( functionName, args[0], args[1], args[2] ) ; // instead of this
 	}
 
@@ -68,7 +68,7 @@ public class WebViewANE extends EventDispatcher {
 			if ( flag ) _context.addEventListener( StatusEvent.STATUS, onStatus );
 			else _context.removeEventListener( StatusEvent.STATUS, onStatus );
 		} else {
-			log(" ERROR:: platform not supported.") ;
+			log( " ERROR:: platform not supported." );
 		}
 	}
 
@@ -77,8 +77,8 @@ public class WebViewANE extends EventDispatcher {
 	 * Maybe we should include dispose() on the context as well...?
 	 */
 	public function dispose():void {
-		log("dispose()") ;
-		listenEvents(false) ;
+		log( "dispose()" );
+		listenEvents( false );
 		if ( _context ) _context.dispose();
 		_context = null;
 	}
@@ -87,9 +87,9 @@ public class WebViewANE extends EventDispatcher {
 	// central point to get context events
 	private function onStatus( event:StatusEvent ):void {
 
-		log("onStatus() code=" + event.code + " level=" + event.level ) ;
+		log( "onStatus() code=" + event.code + " level=" + event.level );
 
-		if( hasEventListener(event.type))
+		if ( hasEventListener( event.type ) )
 			dispatchEvent( event );
 	}
 
@@ -103,8 +103,8 @@ public class WebViewANE extends EventDispatcher {
 	private var _context:ExtensionContext;
 
 	private function log( ...args ):void {
-		if( !verbose ) return ;
-		trace("[WebViewANE] " + args.join(" ")) ;
+		if ( !verbose ) return;
+		trace( "[WebViewANE] " + args.join( " " ) );
 	}
 
 }
