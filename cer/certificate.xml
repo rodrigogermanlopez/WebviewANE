@@ -43,6 +43,7 @@
     <!-- Identifies the ActionScript extensions used by an application. -->
     <extensions>
         <extensionID>studionorth.ane.WebViewANE</extensionID>
+        <extensionID>com.itpointlab.ane.OpenCV.Template</extensionID>
     </extensions>
 
     <!-- Settings for the application's initial window. Required. -->
