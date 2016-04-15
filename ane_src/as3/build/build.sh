@@ -17,12 +17,12 @@ WIN_FILE="StudioNorth.WebView.dll"
 
 echo "GENERATING SWC"
 $ACOMPC -source-path $INCLUDE_SOURCES -include-sources $INCLUDE_SOURCES -swf-version=$SWFVERSION -output $NAME.swc
-sleep 1
+sleep 0
 
 echo "GENERATING LIBRARY from SWC"
 unzip $NAME.swc
 
-sleep 1
+sleep 0
 [[ -f "catalog.xml" ]] && rm -f "catalog.xml"
 
 echo "GENERATING ANE $NAME.ane"
@@ -30,14 +30,16 @@ echo "GENERATING ANE $NAME.ane"
 # -platform Windows-x86 -C ../temp/win/
 #$ADT -package -target ane $NAME.ane ./extension.xml -swc $NAME.swc -platform iPhone-ARM library.swf $IOS_FILE -platformoptions platform.xml -platform default library.swf
 $ADT -package -target ane $NAME.ane ./extension.xml -swc $NAME.swc -platform Windows-x86 library.swf $WIN_FILE -platform default library.swf
-sleep 1
+sleep 0
 
 [[ -f "library.swf" ]] && rm -f "library.swf"
 [[ -f $NAME.swc ]] && rm -f $NAME.swc
 
 echo "DONE!"
 
-cp ./$NAME.ane ../../../lib/$NAME.ane
-mv ./$NAME.ane ../$NAME.ane
+# just keep 1 reference of the file in the /lib/ folder... to avoid uploading the commits and push in git multiple times for the same file.
+mv ./$NAME.ane ../../../lib/$NAME.ane
+#mv ./$NAME.ane ../$NAME.ane
+#cp ./$NAME.ane ../../../lib/$NAME.ane
 
 echo "WebView ANE Build Complete"
