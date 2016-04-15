@@ -12,7 +12,7 @@ SWFVERSION=14
 INCLUDE_SOURCES="../src/"
 NAME="WebViewANE"
 
-WIN_FILE="WebView.dll"
+WIN_FILE="WebViewChromeANE.dll"
 #IOS_FILE="StudioNorth.WebView.a"
 
 echo "GENERATING SWC"
