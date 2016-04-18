@@ -15,7 +15,7 @@
 
 	    <platform name="Windows-x86">
 		    <applicationDeployment>
-			    <nativeLibrary>WebViewChromeANE.dll</nativeLibrary>
+			    <nativeLibrary>Universal_Win_WebViewANE.dll</nativeLibrary>
 			    <initializer>ExtensionInitializer</initializer>
 			    <finalizer>ExtensionFinalizer</finalizer>
 		    </applicationDeployment>

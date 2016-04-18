@@ -1,5 +1,7 @@
 package {
 
+//import com.genesi.desktop.ScreenShooter;
+
 import com.genesi.desktop.ScreenShooter;
 
 import flash.display.Sprite;
@@ -15,13 +17,18 @@ public class Main extends Sprite {
 	private function init():void {
 
 		// test 1
-		var s:ScreenShooter = new ScreenShooter();
-		var ba:ByteArray = s.getScreenShot() ;
-		trace("output bytearray length()::", ba.length ) ;
+		//var s:ScreenShooter = new ScreenShooter();
+		//var ba:ByteArray = s.getScreenShot() ;
+		//trace("output bytearray length()::", ba.length ) ;
 
 		trace( "ANE isSupported:" + WebViewANE.isSupported );
 		if ( !WebViewANE.isSupported ) return;
-		WebViewANE.instance.callContext( "as_passAString", ["A test string hello world"] );
+
+		var msg = WebViewANE.instance.callContext( "as_passAString", ["A test string hello world"] );
+ 		trace ( msg );
+
+		var result:String = WebViewANE.instance.context.call( "as_passAString", "someParameter" ) as String;
+		trace( result) ;
 	}
 }
 }
