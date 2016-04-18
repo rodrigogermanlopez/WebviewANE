@@ -1,7 +1,7 @@
 @echo off
 
 SET SDK=C:\AIRSDK_Compiler\
-SET WIN_FILE=Universal_Win_WebViewANE.dll
+SET WIN_FILE=UniversalWinWebViewANE.dll
 SET NAME=WebViewANE
 
 rem SET THIS=%~dp0
