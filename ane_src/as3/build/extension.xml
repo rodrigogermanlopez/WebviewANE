@@ -15,7 +15,7 @@
 
 	    <platform name="Windows-x86">
 		    <applicationDeployment>
-			    <nativeLibrary>UniversalWinWebViewANE.dll</nativeLibrary>
+			    <nativeLibrary>Win32ConsoleApplicationTest.dll</nativeLibrary>
 			    <initializer>ExtensionInitializer</initializer>
 			    <finalizer>ExtensionFinalizer</finalizer>
 		    </applicationDeployment>
