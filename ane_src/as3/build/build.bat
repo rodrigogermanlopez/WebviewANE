@@ -1,7 +1,13 @@
 @echo off
 
 SET SDK=C:\AIRSDK_Compiler\
-SET WIN_FILE=Universal_Win_WebViewANE.dll
+if not exist %SDK% (
+  SET SDK=C:\dev\tools\air_sdk_21.0.0.176\
+)
+
+echo "using sdk %SDK%"
+
+SET WIN_FILE=UniversalWinWebViewANE.dll
 SET NAME=WebViewANE
 
 rem SET THIS=%~dp0
@@ -26,12 +32,12 @@ call "%ACOMPC%" -source-path %SRC% -include-sources %SRC% -swf-version=%SWFVERSI
 
 echo "DECOMPRESSING LIBRARY"
 %ZIP% e %SWC% -y
-rem DEL catalog.xml
+DEL catalog.xml
 
 echo GENERATING ANE
 call "%ADT%" -package -target ane %NAME%.ane ./extension.xml -swc %NAME%.swc -platform Windows-x86 library.swf %WIN_FILE% -platform default library.swf
 
 copy "%NAME%.ane" "../../../lib/%NAME%.ane"
 
-rem DEL %SWC%
-rem DEL library.swf
+DEL %SWC%
+DEL library.swf
