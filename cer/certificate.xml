@@ -43,7 +43,7 @@
     <!-- Identifies the ActionScript extensions used by an application. -->
     <extensions>
         <extensionID>studionorth.ane.WebViewANE</extensionID>
-        <extensionID>com.genesi.desktop.ScreenShooter</extensionID>
+        <!--<extensionID>com.genesi.desktop.ScreenShooter</extensionID>-->
     </extensions>
 
     <!-- Settings for the application's initial window. Required. -->
@@ -55,10 +55,10 @@
         <!--<title></title>-->
 
         <!-- The type of system chrome to use (either "standard" or "none"). Optional. Default standard. -->
-        <!--<systemChrome></systemChrome>-->
+        <systemChrome>none</systemChrome>
 
         <!-- Whether the window is transparent. Only applicable when systemChrome is none. Optional. Default false. -->
-        <!--<transparent></transparent>-->
+        <transparent>true</transparent>
 
         <!-- Whether the window is initially visible. Optional. Default false. -->
         <visible>true</visible>
@@ -100,7 +100,7 @@
         <!--<fullScreen></fullScreen>-->
 
         <!-- The render mode for the app (either auto, cpu, gpu, or direct). Optional. Default auto -->
-        <!--<renderMode></renderMode>-->
+        <renderMode>gpu</renderMode>
 
         <!-- Whether the default direct mode rendering context allocates storage for depth and stencil buffers.  Optional.  Default false. -->
         <!--<depthAndStencil></depthAndStencil>-->
