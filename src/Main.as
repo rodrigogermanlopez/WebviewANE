@@ -73,10 +73,12 @@ public class Main extends Sprite {
 		trace( "ANE isSupported:" + WebViewANE.isSupported );
 		if ( !WebViewANE.isSupported ) return;
 
-		var msg = WebViewANE.instance.callContext( "PrintString" );
+		var msg = WebViewANE.instance.callContext( "PrintString", Array("someParameter") );
  		trace ( msg );
-//		var result:String = WebViewANE.instance.context.call( "as_passAString", "someParameter" ) as String;
-//		trace( result) ;
+
+		var msg = WebViewANE.instance.callContext( "WebView");
+		trace ( msg );
+
 	}
 
 	private function drawBackground():void {

@@ -7,7 +7,7 @@ if not exist %SDK% (
 
 echo "using sdk %SDK%"
 
-SET WIN_FILE=Win32ConsoleApplicationTest.dll
+SET WIN_FILE=WebViewANEConsoleAppplication.dll
 SET NAME=WebViewANE
 
 rem SET THIS=%~dp0
